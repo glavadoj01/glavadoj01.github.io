@@ -22,8 +22,10 @@ body {
 				 6px 6px 5px #0f0,
 				 9px 9px 5px #00f;
 	background-image: url(img/Banner1.png);
+    background-size: 100% 150px;
 	text-align: center;
 	height: 150px;
+    width: 100%;
 }
 .title h1, .title h2 {
     text-transform: uppercase;
@@ -214,6 +216,10 @@ body {
     .header {
         text-align: center;
     }
+    .title h1 {
+        font-size: 1.9em;
+    }
+
     .container .content {
         grid-column: 1 / -1;
     }

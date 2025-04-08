@@ -1,8 +1,8 @@
 /* General Styles */
 
 * {
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
 	
 	font-family: OpenSans, sans-serif;
     font-weight: 700;
@@ -44,37 +44,84 @@ body {
 /* CONTAINER - Todo menos el HEADER>TITLE */
 .container {
     width: 90%;
-    max-width: 1000px;
-    margin: 1.6em auto;
+    margin: 5 auto;
     display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
     gap: 1.6em;
-    grid-template-columns: repeat(8, 1fr);
+}
+.container>.header, .container>.footer {
+    grid-column: 1/-1;
+    width: 100%;
+    background-color: #fdebd0;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
 }
 .container>.header, .container>.content, .container>.sidebar, .container>.footer, .container>div {
     background: #fbe3bf;
     padding: 20px;
     border: 1px solid #000000;
 }
-.container>.header, .container>.footer {
-    grid-column: 1/-1;
-    background-color: #fdebd0;
-    color: #000;
+
+/* CONTENIDO PRINCIPAL */
+.container>.content {
+    justify-self: center;
+    align-self: start;
+    background: #ffeccf;
+    padding: 20px;
+    color: #dfe6e9;
+    border: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6em;
 }
-.container>.menus-inferior{
-	grid-column: span 8;
-	background: #fbe3bf;
-    color: #f00;
-	
-	display: grid;
-	gap: 1.6em;
-	grid-template-columns: repeat(5,1fr);
+.article {
+    background: #808e9b;
+    padding: 20px;
+    margin: 0;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    color: #dfe6e9
 }
-.container>.footer {
+.article h1, .article p {
+    padding: 10px;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Contenido Lateral */
+.container>.sidebar {
+    background: #ffeccf;
+    color: #f00;	
 	display: flex;
-    justify-content: space-between;
-	align-items: center;
-	padding: 10px;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	max-height: 350px;
+    height: 100%;
+    max-width: 350px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
 }
+
+/* RESTO DE PÁGINA/S */
+.pagina {
+    grid-column: 1/-1;
+    width: 100%;
+    max-width: 800px;
+    text-align: justify;
+    margin: 10 auto;
+    line-height: 1.6;
+    background: #fbe3bf;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
 
 /* Menú Horizontal */
 .menuhorizontal {
@@ -83,10 +130,8 @@ body {
     margin: 0;
     padding: 0;
 	gap: 10px;
-	align-items: center;
 	justify-content: center;
 }
-
 .menuhorizontal a, .menuhorizontal p {
 	width:100px;
 	text-decoration:none;
@@ -99,45 +144,9 @@ body {
 .menuhorizontal a:hover{
 	background-color:#336699;
 }
-.menuhorizontal li {
-	display:inline;
-}
-
-
- /* CONTENIDO PRINCIPAL */
-.container>.content {
-    grid-column: span 5;
-    grid-row: span 4;
-}
-.content>.article {
-    background: #808e9b;
-    padding: 20px;
-    margin-top: 5px;
-    color: #dfe6e9
-}
-.content>.article h1, .content>.article p {
-    padding: 10px;
-}
-
-
-/* Contenido Lateral */
-.container>.sidebar {
-    grid-column: span 3;
-    grid-row: span 4;
-    background: #ffeccf;
-    color: #f00;	
-	display: flex;
-	flex-direction: column;
-    align-items: center;
-    justify-content: center;
-	height: 300px;
-}
 
 /* Deslizador de immagenes (Lateral) */
 .deslizador {
-	margin: 0px;
-	padding: 0px;
-	max-width: 300px;
     width: 100%;
     max-height: 250px;
     height: 100%;
@@ -159,7 +168,6 @@ body {
 .deslizar>.caption {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-	padding-top: 15px;
     text-align: center;
     width: 100%;
 	height:50px;
@@ -168,25 +176,36 @@ body {
 .deslizador:hover .deslizar, .deslizador:hover .caption {
     animation-play-state: paused;
 }
-
-.deslizar:nth-child(1) { animation-delay: 0s; }
-.deslizar:nth-child(2) { animation-delay: 5s; }
-.deslizar:nth-child(3) { animation-delay: 10s; }
-.deslizar:nth-child(4) { animation-delay: 15s; }
-
 @keyframes slideAnimation {
     0% { opacity: 0; }
     20% { opacity: 1; }
     40% { opacity: 0; }
     100% { opacity: 0; }
 }
+
+.deslizar:nth-child(1) { animation-delay: 0s; }
+.deslizar:nth-child(2) { animation-delay: 5s; }
+.deslizar:nth-child(3) { animation-delay: 10s; }
+.deslizar:nth-child(4) { animation-delay: 15s; }
 /* Fin DESLIZADOR */
 
-
 /* Menús inferiores */
+.menus-inferior{
+	grid-column: 1/-1;
+    width: 100%;
+    background: #fbe3bf;
+    color: #f00;
+	padding: 5px;
+	display: grid;
+	gap: 1.6em;
+	grid-template-columns: repeat(5,1fr);
+}
 .menus-inferior>.related-post {
 	background: #fbe3a5;
-    height: 120px;	
+    max-height: 170px;
+    height: 100%;
+    max-width: 180px;
+    width: 100%;
     display: flex;
 	flex-direction: column;
     align-items: center;
@@ -194,47 +213,45 @@ body {
     transition: all 0.5s ease;
 	border: 1px solid black;
 	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 5px;
 }
-
-
+/* Enlaces e Imágenes dentro de related-post */
+.menus-inferior>.related-post a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menus-inferior>.related-post a>img {
+    height: 80%;
+    width: 80%;
+}
 .menus-inferior>.related-post:hover {
     cursor: pointer;
     color: #000000;
     background: #DAF7A6;
-	 transform: translateY(-4px);
+	transform: translateY(-4px);
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4); 
 }
 
-.related-post img {
-	width: 100%;
-	height: 100%;
-}
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES - WIP */
 
 @media screen and (max-width: 768px) {
-    .header {
-        text-align: center;
+    .container {
+        grid-template-columns: 1fr; /* Distribución en una columna para pantallas pequeñas */
     }
-    .title h1 {
-        font-size: 1.9em;
+    .container>.sidebar {
+        grid-column: 1/-1; /* Sidebar ocupa todo el ancho */
     }
-
-    .container .content {
-        grid-column: 1 / -1;
+    .menus-inferior {
+        grid-template-columns: repeat(2, 1fr); /* Menús distribuidos en dos columnas */
     }
-    .container .sidebar {
-        grid-column: 1 / 4;
-        width: 350px;
-    }
-
-    .container .related-post {
-        grid-column: 1/-1;
-        align-content: center;
-        padding: 5px 5px;
-    }
-    .related-post img {
-        width: 75%;
-        align-self: auto;
+    .container>.content {
+        gap: 1em; /* Reducimos el espacio entre artículos en pantallas pequeñas */
     }
 }
+
+

@@ -29,8 +29,7 @@ body {
 }
 .title h1, .title h2 {
     text-transform: uppercase;
-	font-family: HiLoDecoDeco, sans-serif;
-    font-style: bold;
+	font-family: HiLoDecoDeco;
 }
 .title h1 {
     padding: 20px 0;
@@ -50,7 +49,7 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
-    gap: 1.2em;
+    gap: 0.8em;
 }
 .container>.header, .container>.footer {
     grid-column: 1/-1;
@@ -58,7 +57,7 @@ body {
     background-color: #fdebd0;
     color: #000;
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .container>.header, .container>.content, .container>.sidebar, .container>.footer, .container>div {
@@ -96,7 +95,11 @@ body {
     padding: 10px;
     text-align: justify;
     line-height: 1.6;
-    margin: 0;
+}
+.article ul {
+    text-align: justify;
+    padding-left: 50px;
+    line-height: 1.4;
 }
 
 /* Contenido Lateral */
@@ -140,6 +143,7 @@ body {
     margin: 0;
     padding: 0;
 	gap: 10px;
+    
 }
 .menuhorizontal a, .menuhorizontal p {
 	width:100px;
@@ -148,7 +152,10 @@ body {
 	color:#ff0000;
 	background-color:#f7f8e8;
 	padding:3px 5px;
-	border-right:1px solid white;
+
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 .menuhorizontal p:hover, .menuhorizontal a:hover{
 	background-color:#336699;
@@ -208,11 +215,13 @@ body {
 /* Menús inferiores */
 .menus-inferior{
 	grid-column: 1/-1;
-    width: 100%;
+    margin-left: 20px;
+    
+    width: 98%;
     background: #fbe3bf;
     color: #f00;
 	padding: 5px;
-    margin: 20px;
+    
 	display: flex;
     flex-direction: row;
     align-items: center;

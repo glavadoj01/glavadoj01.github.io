@@ -41,3 +41,29 @@ function dados() {
     }
     alert(resultado);
 }
+
+function ruleta() {
+    alert("Bienvenido a la ruleta");
+    let numero = parseInt(prompt("¿Qué número deseas jugar? (0-37)"));
+    if (isNaN(numero) || numero < 0 || numero > 37) {
+        alert("Número inválido");
+        return;
+    }
+    
+    let resultado = Math.floor(Math.random() * 38);
+    let color;    
+    switch(resultado) {
+        case 1, 5, 3, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36:
+            color = "Rojo";
+            break;
+        default:
+            color = "Negro";
+            break;        
+    }
+
+    if (numero === resultado) {
+        alert("¡Felicidades! Ganaste el número " + resultado + " y el color " + color);
+    } else {
+        alert("Perdiste. El número fue " + resultado + " y el color " + color);
+    }
+}

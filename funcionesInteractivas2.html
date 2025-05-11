@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sección de JUEGO - RANDOM FOOD INC.</title>
     <link rel="stylesheet" href="main.css">
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
 </head>
 <body>
     <header class="title">
-        <h1>¡Sección de JUEGO!</h1>
+        <h1>¡Sección de JUEGO 2!</h1>
         <h2>Danos todo tu dinero</h2>
         <h4>y nosotros lo disfrutamos</h4>
     </header>
@@ -20,36 +20,25 @@
 				<li><a href="index.html">Página Principal</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
 				<li><a href="instalador.html">Instalar Windows - Preparar USB</a></li>
-				<li><p>Juego con botones</p></li>
-				<li><a href="funcionesInteractivas2.html">Juego con Menú swich</a></li>
+				<li><a href="funcionesInteractivas.html">Juego con botones</a></li>
+				<li><p>Juego con Menú swich</p></li>
 			</ul>
         </header>
         
         <main class="content">
-            
-            <article class="botonera">
-                <h1>Semaforo de colores</h1>
-                <button onclick="semaforo()">Semáforo</button>
-            </article>
-            
-            <article class="botonera">
-                <h1>Botón Números Orden</h1>
-                <button onclick="diezNumeros()">Diez números</button>
-            </article>
-            
-            <article class="botonera">
-                <h1>Botón Dados Aleatorios</h1>
-                <button onclick="dados()">Dados</button>
-            </article>
-            
+            <section class="menu-interactivo">
+                <h1>Ejercicios Interactivos</h1>
+                <label for="opcion">Selecciona una opción:</label>
+                <select id="opcion">
+                    <option value="1">Semáforo</option>
+                    <option value="2">Diez números</option>
+                    <option value="3">Dados</option>
+                    <option value="4">Ruleta Europea</option>
+                </select>
+                <button onclick="ejecutarOpcion()">Ejecutar</button>
+                <div id="resultado" class="resultado"></div>
+            </section>
         </main>
-        <aside class="sidebar">
-            <div class="botonera">
-                <h1>JUGEMOS A LA RULETA</h1>
-                <img src="img/ruleta.png" alt="Ruleta">
-                <button onclick="ruleta()">¡A JUGAR!</button>
-            </div>
-        </aside>
             
         <footer class="footer">
             <h4>Random FOOD Inc. &#174;</h4>
